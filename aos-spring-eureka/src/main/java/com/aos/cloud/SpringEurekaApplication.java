@@ -1,4 +1,4 @@
-package com.aos;
+package com.aos.cloud;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

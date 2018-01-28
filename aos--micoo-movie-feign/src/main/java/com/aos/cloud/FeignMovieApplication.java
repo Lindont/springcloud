@@ -1,9 +1,9 @@
-package com.aos;
+package com.aos.cloud;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
-
+import org.springframework.cloud.netflix.feign.EnableFeignClients;
 
 /**
  * @Author : HuangHaoXin
@@ -12,8 +12,9 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
  */
 @SpringBootApplication
 @EnableEurekaClient
-public class AosMicooWebApplication {
+@EnableFeignClients
+public class FeignMovieApplication {
     public static void main(String[] args) {
-        SpringApplication.run(AosMicooWebApplication.class, args);
+        SpringApplication.run(FeignMovieApplication.class, args);
     }
 }

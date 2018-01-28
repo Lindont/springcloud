@@ -19,7 +19,9 @@
 	<modules>
 		<module>aos-spring-eureka</module>
         <module>aos-micoo-web</module>
+        <module>aos-micoo-web2</module>
         <module>aos--micoo-movie</module>
+        <module>aos--micoo-movie-feign</module>
     </modules>
 
 	<dependencyManagement>

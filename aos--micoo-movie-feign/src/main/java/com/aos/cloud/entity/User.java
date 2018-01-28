@@ -1,4 +1,4 @@
-package com.aos.entity;
+package com.aos.cloud.entity;
 
 import java.math.BigDecimal;
 
