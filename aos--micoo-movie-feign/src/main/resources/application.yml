@@ -19,3 +19,6 @@ eureka:
 management:
   security:
     enabled: false
+logging:
+  level:
+    com.aos.cloud.controller.UserFeignClient: DEBUG
