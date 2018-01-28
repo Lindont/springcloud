@@ -25,8 +25,8 @@ public class WebController {
         return user;
     }
 
-    @PostMapping("/user")
-    public User postUser(@RequestBody User user) {
-        return user;
+    @PostMapping("/test")
+    public String postUser() {
+        return "web";
     }
 }
