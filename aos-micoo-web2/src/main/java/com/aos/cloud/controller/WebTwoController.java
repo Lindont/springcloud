@@ -1,9 +1,7 @@
 package com.aos.cloud.controller;
 
 import com.aos.cloud.entity.User;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @Author : HuangHaoXin
@@ -11,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @Date : Create in 2018-01-27
  */
 @RestController
-public class HelloController {
+public class WebTwoController {
     @RequestMapping("/movie/{id}")
     public User getMovieInfo(@PathVariable int id) {
         System.out.println("222");
@@ -24,6 +22,11 @@ public class HelloController {
         } else {
             user.setName("id-2");
         }
+        return user;
+    }
+
+    @PostMapping("/user")
+    public User postUser(@RequestBody User user) {
         return user;
     }
 }

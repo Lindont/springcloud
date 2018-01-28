@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
  * @Date : Create in 2018-01-27
  */
 @RestController
-public class HelloController {
+public class WebController {
     @RequestMapping("/movie/{id}")
     public User getMovieInfo(@PathVariable int id) {
         System.out.println("111");
