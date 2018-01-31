@@ -21,8 +21,8 @@
 		<module>aos-spring-eureka-hight</module>
         <module>aos-micoo-web</module>
         <module>aos-micoo-web2</module>
-        <module>aos--micoo-movie</module>
-        <module>aos--micoo-movie-feign</module>
+        <module>aos-micoo-movie</module>
+        <module>aos-micoo-movie-feign</module>
     </modules>
 
 	<dependencyManagement>
