@@ -8,7 +8,7 @@ eureka:
     healthcheck:
       enabled: true
     serviceUrl:
-      defaultZone: http://user:aosco@localhost:8761/eureka
+      defaultZone: http://user:aosco@localhost:8761/eureka,http://user:aosco@localhost:8762/eureka,http://user:aosco@localhost:8763/eureka
   instance:
     prefer-ip-address: true
     instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${spring.application.instance_id:${server.port}}
@@ -21,3 +21,7 @@ management:
 logging:
   level:
     com.aos.cloud.controller.UserFeignClient: DEBUG
+# 打开Feign对ystrix的支持
+feign:
+  hystrix:
+    enabled: true

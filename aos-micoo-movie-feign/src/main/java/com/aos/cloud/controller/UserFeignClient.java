@@ -1,12 +1,11 @@
 package com.aos.cloud.controller;
 
 import com.aos.cloud.entity.User;
+import com.aos.cloud.fallback.HystrixClientFallback;
 import com.aos.config.FeignConfiguration;
 import feign.Param;
 import feign.RequestLine;
 import org.springframework.cloud.netflix.feign.FeignClient;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 
 /**
  * @Author : HuangHaoXin
@@ -21,7 +20,7 @@ import org.springframework.web.bind.annotation.PathVariable;
  *    不能使用 @GetMapping, 如果使用 @PathVariable 需要指定 value
  */
 
-@FeignClient(name = "aos-micoo-web", configuration = FeignConfiguration.class)
+@FeignClient(name = "aos-micoo-web", configuration = FeignConfiguration.class, fallback = HystrixClientFallback.class)
 public interface UserFeignClient {
 
     @RequestLine("GET /movie/{id}")
