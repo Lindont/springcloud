@@ -5,6 +5,8 @@ import com.aos.config.FeignConfiguration;
 import feign.Param;
 import feign.RequestLine;
 import org.springframework.cloud.netflix.feign.FeignClient;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 /**
  * @Author : HuangHaoXin
@@ -14,8 +16,9 @@ import org.springframework.cloud.netflix.feign.FeignClient;
 
 
 /**
- * 1. 如果指定了configuration 属性, 则需使用 @RequestLine("GET /movie/{id}"), 同时参数要用@Param注解
- * 2. 如果没有指定configuration 属性, 则使用@RequestMapping(value = "/movie/{id}", method = RequestMethod.GET)
+ * 1. 如果指定了configuration 属性, 则需使用 @RequestLine("GET /movie/{id}"), 同时参数要用 @Param 注解
+ * 2. 如果没有指定configuration 属性, 则使用 @RequestMapping(value = "/movie/{id}", method = RequestMethod.GET),
+ *    不能使用 @GetMapping, 如果使用 @PathVariable 需要指定 value
  */
 
 @FeignClient(name = "aos-micoo-web", configuration = FeignConfiguration.class)

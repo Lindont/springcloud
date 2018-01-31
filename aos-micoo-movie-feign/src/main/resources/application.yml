@@ -2,7 +2,7 @@ server:
   port: 7904
 spring:
   application:
-    name: aos--micoo-movie-feign
+    name: aos-micoo-movie-feign
 eureka:
   client:
     healthcheck:

@@ -1,5 +1,8 @@
 package com.aos.config;
 
+import com.netflix.client.config.IClientConfig;
+import com.netflix.loadbalancer.IPing;
+import com.netflix.loadbalancer.PingUrl;
 import feign.Contract;
 import feign.Logger;
 import feign.auth.BasicAuthRequestInterceptor;
