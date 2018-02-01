@@ -1,2 +1,9 @@
 server:
   port: 9001
+spring:
+  application:
+    name: aos-manager-zuul
+eureka:
+  client:
+    service-url:
+      defaultZone: http://user:aosco@peer1:8761/eureka,http://user:aosco@peer2:8762/eureka,http://user:aosco@peer3:8763/eureka
