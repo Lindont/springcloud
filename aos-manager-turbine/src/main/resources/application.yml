@@ -15,7 +15,3 @@ turbine:
     clusterConfig: default
   appConfig: aos-micoo-movie-feign,aos-micoo-shopping-feign
   cluster-name-expression: "'default'"
-logging:
-  level:
-    root: info
-      com.netflix.turbine.monitor: debug
