@@ -1,7 +1,6 @@
-package com.aos.cloud.controller;
+package com.aos.cloud.feign;
 
 import com.aos.cloud.entity.User;
-import com.aos.cloud.fallback.UserFeignFallback;
 import com.aos.cloud.fallback.UserFeignFallbackFactory;
 import com.aos.config.FeignConfiguration;
 import feign.Param;
@@ -23,12 +22,12 @@ import org.springframework.stereotype.Component;
  * 3. fallbackFactory 是 fallback 的增强版, 不可同时使用
  */
 @Component
-@FeignClient(name = "aos-micoo-web", configuration = FeignConfiguration.class,/*fallback = UserFeignFallback.class,*/fallbackFactory = UserFeignFallbackFactory.class)
-public interface UserFeignClient {
+@FeignClient(name = "aos-micoo-web", configuration = FeignConfiguration.class, fallbackFactory = UserFeignFallbackFactory.class)
+public interface ShoppingFeignClient {
 
     @RequestLine("GET /movie/{id}")
-    User findById(@Param("id") Long id);
+    User findSimpleById(@Param("id") Long id);
 
     @RequestLine("POST /test")
-    String postUser();
+    String findTest();
 }

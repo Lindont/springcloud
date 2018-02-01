@@ -1,6 +1,6 @@
 package com.aos.cloud.fallback;
 
-import com.aos.cloud.controller.ShoppingFeignClient;
+import com.aos.cloud.feign.ShoppingFeignClient;
 import com.aos.cloud.entity.User;
 import feign.hystrix.FallbackFactory;
 import org.slf4j.Logger;
@@ -23,7 +23,7 @@ public class UserFeignFallbackFactory implements FallbackFactory<ShoppingFeignCl
         logger.info("================================================");
         return new ShoppingFeignClientFactory() {
             @Override
-            public User findById(Long id) {
+            public User findSimpleById(Long id) {
                 User user = new User();
                 user.setId(-1L);
                 user.setName("error");

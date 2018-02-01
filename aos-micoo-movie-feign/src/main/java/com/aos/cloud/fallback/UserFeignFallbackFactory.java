@@ -1,6 +1,6 @@
 package com.aos.cloud.fallback;
 
-import com.aos.cloud.controller.UserFeignClient;
+import com.aos.cloud.feign.UserFeignClient;
 import com.aos.cloud.entity.User;
 import feign.hystrix.FallbackFactory;
 import org.slf4j.Logger;

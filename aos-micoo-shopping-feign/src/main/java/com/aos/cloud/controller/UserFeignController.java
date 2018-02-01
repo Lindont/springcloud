@@ -1,6 +1,7 @@
 package com.aos.cloud.controller;
 
 import com.aos.cloud.entity.User;
+import com.aos.cloud.feign.ShoppingFeignClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,7 +22,7 @@ public class UserFeignController {
 
     @GetMapping("/simple/{id}")
     public User findSimpleById(@PathVariable Long id) {
-        return shoppingFeignClient.findById(id);
+        return shoppingFeignClient.findSimpleById(id);
     }
 
     @PostMapping("/test")

@@ -1,6 +1,7 @@
-package com.aos.cloud.controller;
+package com.aos.cloud.feign;
 
 import com.aos.cloud.entity.User;
+import com.aos.cloud.fallback.UserFeignFallback;
 import com.aos.cloud.fallback.UserFeignFallbackFactory;
 import com.aos.config.FeignConfiguration;
 import feign.Param;
@@ -23,11 +24,11 @@ import org.springframework.stereotype.Component;
  */
 @Component
 @FeignClient(name = "aos-micoo-web", configuration = FeignConfiguration.class,/*fallback = UserFeignFallback.class,*/fallbackFactory = UserFeignFallbackFactory.class)
-public interface ShoppingFeignClient {
+public interface UserFeignClient {
 
     @RequestLine("GET /movie/{id}")
     User findById(@Param("id") Long id);
 
     @RequestLine("POST /test")
-    String findTest();
+    String postUser();
 }

@@ -1,6 +1,6 @@
 package com.aos.cloud.fallback;
 
-import com.aos.cloud.controller.ShoppingFeignClient;
+import com.aos.cloud.feign.ShoppingFeignClient;
 
 /**
  * @Author : HuangHaoXin
