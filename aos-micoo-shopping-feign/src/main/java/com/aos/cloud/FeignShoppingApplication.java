@@ -3,10 +3,8 @@ package com.aos.cloud;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
-import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
-import org.springframework.context.annotation.Bean;
-import org.springframework.web.client.RestTemplate;
+import org.springframework.cloud.netflix.feign.EnableFeignClients;
 
 /**
  * @Author : HuangHaoXin
@@ -15,15 +13,10 @@ import org.springframework.web.client.RestTemplate;
  */
 @SpringBootApplication
 @EnableEurekaClient
-public class AosMicooMovieApplication {
-
-    @Bean
-    @LoadBalanced
-    public RestTemplate restTemplate() {
-        return new RestTemplate();
-    }
-
+@EnableFeignClients
+@EnableCircuitBreaker    //启用Hystrix
+public class FeignShoppingApplication {
     public static void main(String[] args) {
-        SpringApplication.run(AosMicooMovieApplication.class, args);
+        SpringApplication.run(FeignShoppingApplication.class, args);
     }
 }

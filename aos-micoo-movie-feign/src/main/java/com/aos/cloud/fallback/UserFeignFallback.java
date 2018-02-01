@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
  * @Date : Create in 2018-01-31
  */
 @Component
-public class HystrixClientFallback implements UserFeignClient {
+public class UserFeignFallback implements UserFeignClient {
     @Override
     public User findById(Long id) {
         User user = new User();

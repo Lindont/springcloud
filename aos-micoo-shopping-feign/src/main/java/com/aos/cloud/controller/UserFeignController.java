@@ -7,9 +7,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Arrays;
-import java.util.List;
-
 /**
  * @Author : HuangHaoXin
  * @Description :
@@ -19,16 +16,16 @@ import java.util.List;
 public class UserFeignController {
 
     @Autowired
-    private UserFeignClient userFeignClient;
+    private ShoppingFeignClient shoppingFeignClient;
 
 
-    @GetMapping("/movie/{id}")
-    public User findById(@PathVariable Long id) {
-        return userFeignClient.findById(id);
+    @GetMapping("/simple/{id}")
+    public User findSimpleById(@PathVariable Long id) {
+        return shoppingFeignClient.findById(id);
     }
 
     @PostMapping("/test")
-    public String postUser(){
-        return userFeignClient.postUser();
+    public String findfTest() {
+        return shoppingFeignClient.findTest();
     }
 }

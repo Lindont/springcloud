@@ -1,8 +1,8 @@
 server:
-  port: 7905
+  port: 7908
 spring:
   application:
-    name: aos-micoo-movie-feign
+    name: aos-micoo-shopping-feign
 eureka:
   client:
     healthcheck:

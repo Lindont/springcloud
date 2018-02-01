@@ -1,0 +1,21 @@
+server:
+  port: 8900
+spring:
+  application:
+    name: aos-manager-turbine
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://user:aosco@peer1:8761/eureka,http://user:aosco@peer2:8762/eureka,http://user:aosco@peer3:8763/eureka
+  instance:
+      prefer-ip-address: true
+# appConfig 配置集群要监控的应用, 即填写所有应用的spring.application.name.
+turbine:
+  aggregator:
+    clusterConfig: default
+  appConfig: aos-micoo-movie-feign,aos-micoo-shopping-feign
+  cluster-name-expression: "'default'"
+logging:
+  level:
+    root: info
+      com.netflix.turbine.monitor: debug

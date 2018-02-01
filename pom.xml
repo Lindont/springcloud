@@ -23,6 +23,10 @@
         <module>aos-micoo-web2</module>
         <module>aos-micoo-movie</module>
         <module>aos-micoo-movie-feign</module>
+        <module>aos-micoo-shopping-feign</module>
+        <module>aos-manager-hystrix-dashboard</module>
+        <module>aos-manager-turbine</module>
+        <module>aos-manager-zuul</module>
     </modules>
 
 	<dependencyManagement>
