@@ -1,6 +1,7 @@
 Eureka 高可用配置
 
-1. 先在host文件配置3个域名, 如 peer1, peer2, peer3, C:\windows\system32\drivers\etc
+1. 先在host文件(C:\windows\system32\drivers\etc)配置3个域名,  
+   127.0.0.1 peer1 peer2 peer3
 2. 配置文件application.yml, 有多个配置, 启动应用时要指定使用哪个配置
 
 spring:
